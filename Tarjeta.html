@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keytech Solutions | Keyser Key</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent: #f97316; 
+            --cyan: #22d3ee;
+            --text: #f8fafc;
+            --dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .dashboard {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tile {
+            background: var(--panel);
+            border: 1px solid #1e293b;
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .header-tile {
+            border-top: 5px solid var(--accent);
+            text-align: center;
+            position: relative;
+        }
+
+        .status-dot {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            color: #4ade80;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .logo { font-size: 32px; font-weight: 900; margin: 0; letter-spacing: -1px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+        .slogan { font-size: 11px; color: var(--cyan); letter-spacing: 1px; font-weight: bold; margin-top: 5px; text-transform: uppercase; }
+        .owner { font-size: 16px; color: var(--text); margin-top: 12px; font-weight: 400; opacity: 0.9; }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .service-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            gap: 15px;
+            border-left: 4px solid var(--accent);
+            transition: 0.3s;
+        }
+
+        .service-item:hover { background: rgba(30, 41, 59, 0.8); border-left-color: var(--cyan); }
+
+        .service-item i { color: var(--cyan); font-size: 20px; margin-top: 3px; }
+        .service-item div b { display: block; color: var(--text); font-size: 14px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .service-item div p { margin: 0; font-size: 12px; color: var(--dim); line-height: 1.4; }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 14px;
+            text-align: center;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-secondary {
+            background: #1e293b;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .terminal {
+            background: #000;
+            border-radius: 10px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #4ade80;
+            border: 1px solid #166534;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <div class="tile header-tile">
+        <div class="status-dot"><div class="dot"></div> SISTEMA ACTIVO</div>
+        <h1 class="logo">KEYTECH<span> SOLUTIONS</span></h1>
+        <div class="slogan">Ingeniería clave para un mundo conectado</div>
+        <div class="owner"><i class="fas fa-microchip" style="color: var(--accent);"></i> Ing. Keyser Key</div>
+    </div>
+
+    <div class="services-container">
+        
+        <div class="service-item">
+            <i class="fas fa-network-wired"></i>
+            <div>
+                <b>Redes (Doméstica/Empresaria)</b>
+                <p>Instalación, soporte y reestructuración completa.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-laptop-code"></i>
+            <div>
+                <b>Equipos IT y Telefonía</b>
+                <p>Reparación, actualización, mantenimiento preventivo y correctivo.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-wifi"></i>
+            <div>
+                <b>Servicio de Internet</b>
+                <p>Fibra óptica y radio enlace: Instalación, soporte y adecuación.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-home"></i>
+            <div>
+                <b>Domótica</b>
+                <p>Instalación, reparación y modificación de sistemas inteligentes.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-video"></i>
+            <div>
+                <b>Cámaras de Seguridad</b>
+                <p>Instalación, soporte técnico y adecuación de sistemas.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-rss"></i>
+            <div>
+                <b>Zona WiFi</b>
+                <p>Implementación y soporte de cobertura inalámbrica.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-code"></i>
+            <div>
+                <b>Informática Avanzada</b>
+                <p>Desarrollo Web/App, Base de Datos, Ciberseguridad e Infraestructura Cloud.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="actions" style="display: flex; flex-direction: column; gap: 10px;">
+        <a href="https://wa.me/584126334721?text=Hola%20Keytech%20Solutions,%20solicito%20información." class="btn-primary">
+            <i class="fab fa-whatsapp"></i> INICIAR CONSULTA TÉCNICA
+        </a>
+        <div class="btn-group">
+            <a href="tel:+584126334721" class="btn-secondary">
+                <i class="fas fa-phone"></i> LLAMAR AHORA
+            </a>
+            <a href="#" class="btn-secondary">
+                <i class="fas fa-file-download"></i> GUARDAR V-CARD
+            </a>
+        </div>
+    </div>
+
+    <div class="terminal">
+        > KEYTECH_SOLUTIONS_READY...<br>
+        > USER_AUTH: KEYSER_KEY<br>
+        > ENCRYPTION: SECURE_CHANNEL_ON
+    </div>
+</div>
+
+</body>
+</html>
